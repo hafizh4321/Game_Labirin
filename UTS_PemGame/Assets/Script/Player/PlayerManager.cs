@@ -11,6 +11,11 @@ namespace PG
         Animator anim;
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
+
+        InteractableUi interactableUi;
+        public GameObject interactableUiGameObject;
+        public GameObject itemInteractableGameObject;
+
         public bool isInteracting;
 
         [Header("Player Flags")]
@@ -31,6 +36,7 @@ namespace PG
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
+            interactableUi = FindObjectOfType<InteractableUi>();
         }
 
 
@@ -92,12 +98,26 @@ namespace PG
                     if (interactableObject != null)
                     {
                         string interactableText = interactableObject.interactableText;
+                        interactableUi.interactableText.text = interactableText;
+                        interactableUiGameObject.SetActive(true);
 
                         if (inputHandler.a_input)
                         {
                             hit.collider.GetComponent<Interactable>().Interact(this);
                         }
                     }
+                }
+            }
+            else
+            {
+                if (interactableUiGameObject != null)
+                {
+                    interactableUiGameObject.SetActive(false);
+                }
+
+                if (itemInteractableGameObject != null && inputHandler.a_input)
+                {
+                    itemInteractableGameObject.SetActive(false);
                 }
             }
         }

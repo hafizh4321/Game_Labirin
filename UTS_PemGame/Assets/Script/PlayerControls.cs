@@ -200,7 +200,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""99bf3c10-85c9-4b3d-a1e3-66f6187ec1ec"",
-                    ""path"": ""<Keyboard>/v"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
