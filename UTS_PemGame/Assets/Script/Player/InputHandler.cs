@@ -16,6 +16,8 @@ namespace PG
         public bool a_input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool jump_Input;
+
         public bool d_Pad_Up;
         public bool d_Pad_Down;
         public bool d_Pad_Left;
@@ -65,6 +67,7 @@ namespace PG
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
             HandleInteractingButtonInput();
+            HandleJumpInput();
         }
 
         public void MoveInput(float delta)
@@ -129,6 +132,11 @@ namespace PG
         private void HandleInteractingButtonInput()
         {
             inputActions.PlayerAction.A.performed += i => a_input = true;
+        }
+
+        private void HandleJumpInput()
+        {
+            inputActions.PlayerAction.Jump.performed += i => jump_Input = true;
         }
     }
 
