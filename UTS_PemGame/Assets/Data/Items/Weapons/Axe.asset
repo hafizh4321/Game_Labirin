@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664b1d6152e8c9d499ebc36f16ef841b, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: ac2c9f28a6d73594793756b5564e2506, type: 3}
+  itemName: Axe
+  modelPrefab: {fileID: 6124127076334134672, guid: 3236354185871e7428b3091e82eec83f, type: 3}
+  isUnarmed: 0
+  OH_Light_Attack_1: OH_Light_Attack_01
+  OH_Heavy_Attack_1: OH_Heavy_Attack_01
