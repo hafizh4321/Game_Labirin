@@ -81,6 +81,7 @@ namespace PG
             inputHandler.d_Pad_Left = false;
             inputHandler.a_input = false;
             inputHandler.jump_Input = false;
+            inputHandler.inventory_Input = false;
 
 
             if (isInAir)

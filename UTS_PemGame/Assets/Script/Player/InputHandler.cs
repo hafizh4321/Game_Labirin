@@ -17,6 +17,7 @@ namespace PG
         public bool rb_Input;
         public bool rt_Input;
         public bool jump_Input;
+        public bool inventory_Input;
 
         public bool d_Pad_Up;
         public bool d_Pad_Down;
@@ -25,11 +26,15 @@ namespace PG
 
         public bool rollFlag;
         public bool sprintFlag;
+        public bool inventoryFlag;
         public float rollInputTImer;
 
         PlayerControls inputActions;
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
+        PlayerManager playerManager;
+        UiManager uiManager;
+
 
 
         Vector2 movementInput;
@@ -40,6 +45,7 @@ namespace PG
         {
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            uiManager = FindObjectOfType<UiManager>();
         }
 
 
@@ -68,6 +74,7 @@ namespace PG
             HandleQuickSlotsInput();
             HandleInteractingButtonInput();
             HandleJumpInput();
+            HandleInventoryInput();
         }
 
         public void MoveInput(float delta)
@@ -137,6 +144,26 @@ namespace PG
         private void HandleJumpInput()
         {
             inputActions.PlayerAction.Jump.performed += i => jump_Input = true;
+        }
+
+        private void HandleInventoryInput()
+        {
+            inputActions.PlayerAction.inventory.performed += i => inventory_Input = true;
+            if (inventory_Input)
+            {
+                inventoryFlag = !inventoryFlag;
+
+                if (inventoryFlag)
+                {
+                    uiManager.OpenSelectWindow();
+
+                }
+                else
+                {
+                    uiManager.CLoseSelectWindow();
+
+                }
+            }
         }
     }
 

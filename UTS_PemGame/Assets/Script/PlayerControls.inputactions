@@ -107,6 +107,14 @@
             "id": "f518fd87-39e1-493b-b2c1-f0071b586650",
             "actions": [
                 {
+                    "name": "inventory",
+                    "type": "Button",
+                    "id": "822c81c6-8b11-4da8-ab40-6079cc0b9445",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "A",
                     "type": "Button",
                     "id": "d59369da-9ef9-4cec-8aab-2481a187330f",
@@ -211,6 +219,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8594c08-5056-41b4-8011-c58c33151d94",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
