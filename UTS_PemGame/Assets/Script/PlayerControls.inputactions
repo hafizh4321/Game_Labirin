@@ -107,6 +107,22 @@
             "id": "f518fd87-39e1-493b-b2c1-f0071b586650",
             "actions": [
                 {
+                    "name": "A",
+                    "type": "Button",
+                    "id": "d59369da-9ef9-4cec-8aab-2481a187330f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "006fc434-53e7-4d0d-8efb-162edc285aac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Roll",
                     "type": "Button",
                     "id": "b7352a07-a4c7-4851-8194-fbe531d08ade",
@@ -126,14 +142,6 @@
                     "name": "RT",
                     "type": "Button",
                     "id": "daf77d25-edc3-4960-b4ff-7efa70d25ca4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "A",
-                    "type": "Button",
-                    "id": "d59369da-9ef9-4cec-8aab-2481a187330f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -192,6 +200,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7db08955-6798-4e00-978e-186c984ea80c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
