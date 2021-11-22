@@ -1,2 +1,3 @@
 # INSTALL GIT
-- asd
+- git lfs install
+* asd
