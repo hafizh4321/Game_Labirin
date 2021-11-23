@@ -156,11 +156,14 @@ namespace PG
                 if (inventoryFlag)
                 {
                     uiManager.OpenSelectWindow();
-
+                    uiManager.UpdateUi();
+                    uiManager.hudWindow.SetActive(false);
                 }
                 else
                 {
                     uiManager.CLoseSelectWindow();
+                    uiManager.CLoseAllInventoryWindows();
+                    uiManager.hudWindow.SetActive(true);
 
                 }
             }

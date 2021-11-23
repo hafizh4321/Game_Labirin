@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PG
 {
@@ -11,6 +12,7 @@ namespace PG
         public int currentHealth;
 
         public HealthBar healthBar;
+        public GameOverScreen gameOverScreen;
 
         AnimatorHandler animatorHandler;
 
@@ -44,6 +46,7 @@ namespace PG
             {
                 currentHealth = 0;
                 animatorHandler.PlayTargetAnimation("Dead_01", true);
+                gameOverScreen.GameoverShow();
             }
         }
     }
