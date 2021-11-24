@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 namespace PG
 {
@@ -12,9 +14,14 @@ namespace PG
         public int currentHealth;
 
         public HealthBar healthBar;
+        public PlayerLocomotion playerLocomotion;
         public GameOverScreen gameOverScreen;
 
+        public GameObject selectWindow;
+
+
         AnimatorHandler animatorHandler;
+
 
         private void Awake()
         {
@@ -23,6 +30,7 @@ namespace PG
 
         void Start()
         {
+            // if(sceneloader)
             maxHealth = setMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
@@ -48,6 +56,36 @@ namespace PG
                 animatorHandler.PlayTargetAnimation("Dead_01", true);
                 gameOverScreen.GameoverShow();
             }
+        }
+
+        public void SavePlayer()
+        {
+            SaveSystem.SavePlayer(this);
+            playerLocomotion.SetCurrentEnergy();
+
+        }
+
+        public void LoadPlayer()
+        {
+            // selectWindow.SetActive(false);
+            // Cursor.lockState = CursorLockMode.Confined;
+            // Time.timeScale = 1f;
+            // SceneManager.LoadScene("SampleScene");
+
+            PlayerData data = SaveSystem.LoadPlayer();
+
+            currentHealth = data.currentHealth;
+
+            Vector3 position;
+            position.x = data.position[0];
+            position.y = data.position[1];
+            position.z = data.position[2];
+            transform.position = position;
+            healthBar.SetCurrentHealth(currentHealth);
+            playerLocomotion.CurrentEnergy();
+
+
+
         }
     }
 }

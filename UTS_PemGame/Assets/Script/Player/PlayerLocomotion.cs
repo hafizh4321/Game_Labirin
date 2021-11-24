@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace PG
 {
     public class PlayerLocomotion : MonoBehaviour
     {
+        public Image currentEnergy;
+        public float energyCurrent;
+        public float energy = 74;
+        public float maxEnergy = 74;
+        public Slider slider;
+
+
+
         PlayerManager playerManager;
         Transform cameraObject;
         InputHandler inputHandler;
@@ -49,7 +59,12 @@ namespace PG
         }
 
 
+        void Update()
+        {
+            EnergyDrain();
+            UpdateEnergy();
 
+        }
 
         #region Movement
         Vector3 normalVector;
@@ -248,6 +263,51 @@ namespace PG
                 }
             }
         }
+
+        private void EnergyDrain()
+        {
+
+            if (playerManager.isSprinting == true)
+            {
+                if (energy < 75 && energy > 0)
+                {
+                    energy -= 15 * Time.deltaTime;
+                    // energyCurrent = energy;
+                }
+            }
+            else if (energy < 75 && energy > 0)
+            {
+                energy += 10 * Time.deltaTime;
+                // energyCurrent = energy;
+
+            }
+            else
+            {
+                energy = maxEnergy;
+
+            }
+        }
+
+        private void UpdateEnergy()
+        {
+            float ratio = energy / maxEnergy;
+            currentEnergy.rectTransform.localScale = new Vector3(ratio, 1, 1);
+        }
+
+        public void SetCurrentEnergy()
+        {
+            // float ratio = energy / maxEnergy;
+            // slider.value = ratio;
+            energyCurrent = energy;
+        }
+        public void CurrentEnergy()
+        {
+            energy = energyCurrent;
+            float ratio = energy / maxEnergy;
+            slider.value = ratio;
+            energy = energyCurrent;
+        }
+
         #endregion
 
     }

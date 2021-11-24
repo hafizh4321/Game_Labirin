@@ -7,11 +7,13 @@ namespace PG
     public class UiManager : MonoBehaviour
     {
         public PlayerInventory playerInventory;
+        public PlayerStats playerStats;
 
         [Header("UI Windows")]
         public GameObject selectWindow;
         public GameObject hudWindow;
         public GameObject weaponInventoryWindow;
+        public GameObject pauseMenuWindow;
 
         [Header("Weapon Inventory")]
         public GameObject weaponInventorySlotPrefab;
@@ -59,12 +61,17 @@ namespace PG
             selectWindow.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
-
         }
 
         public void CLoseAllInventoryWindows()
         {
             weaponInventoryWindow.SetActive(false);
+            pauseMenuWindow.SetActive(false);
         }
+
+        // public void SaveGame()
+        // {
+        //     SaveSystem.SavePlayer(playerStats);
+        // }
     }
 }
