@@ -19,5 +19,9 @@ namespace PG
         {
             SceneManager.LoadScene("SampleScene");
         }
+        public void MainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

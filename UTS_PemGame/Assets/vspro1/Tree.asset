@@ -25,7 +25,7 @@ MonoBehaviour:
     VegetationTexture: {fileID: 0}
     VegetationGuid: 393b236c42954a640b513d46de90ac38
     SampleDistance: 5
-    Density: 1
+    Density: 0
     RandomizePosition: 1
     UseVegetationMasksOnStorage: 0
     UseSamplePointOffset: 0
