@@ -13,8 +13,8 @@ namespace PG
         public float energy = 74;
         public float maxEnergy = 74;
         public Slider slider;
-
-
+        public float ratio;
+        public float ratioCurrent;
 
         PlayerManager playerManager;
         Transform cameraObject;
@@ -281,6 +281,10 @@ namespace PG
                 // energyCurrent = energy;
 
             }
+            else if (energy < 1)
+            {
+                energy = 1;
+            }
             else
             {
                 energy = maxEnergy;
@@ -290,7 +294,7 @@ namespace PG
 
         private void UpdateEnergy()
         {
-            float ratio = energy / maxEnergy;
+            ratio = energy / maxEnergy;
             currentEnergy.rectTransform.localScale = new Vector3(ratio, 1, 1);
         }
 
@@ -299,11 +303,12 @@ namespace PG
             // float ratio = energy / maxEnergy;
             // slider.value = ratio;
             energyCurrent = energy;
+            ratioCurrent = ratio;
         }
         public void CurrentEnergy()
         {
             energy = energyCurrent;
-            float ratio = energy / maxEnergy;
+            ratio = ratioCurrent;
             slider.value = ratio;
             energy = energyCurrent;
         }

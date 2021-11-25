@@ -9,6 +9,8 @@ namespace PG
     {
         public Text interactableText;
         public Text itemText;
+        public Text startText;
+        public Text finishText;
         public RawImage itemImage;
     }
 }
