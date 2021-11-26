@@ -15,6 +15,7 @@ namespace PG
 
         public HealthBar healthBar;
         public PlayerLocomotion playerLocomotion;
+        public EnergyBar energyBar;
         public Clock clock;
         public GameOverScreen gameOverScreen;
 
@@ -62,7 +63,7 @@ namespace PG
         public void SavePlayer()
         {
             SaveSystem.SavePlayer(this);
-            playerLocomotion.SetCurrentEnergy();
+            energyBar.SetCurrentEnergy();
             clock.currentTime();
 
         }
@@ -78,13 +79,14 @@ namespace PG
 
             currentHealth = data.currentHealth;
 
+
             Vector3 position;
             position.x = data.position[0];
             position.y = data.position[1];
             position.z = data.position[2];
             transform.position = position;
             healthBar.SetCurrentHealth(currentHealth);
-            playerLocomotion.CurrentEnergy();
+            energyBar.CurrentEnergy();
             clock.LoadCurrentTime();
 
 

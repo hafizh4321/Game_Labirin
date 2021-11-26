@@ -14,7 +14,7 @@ namespace PG
 
         InteractableUi interactableUi;
         public GameObject interactableUiGameObject;
-        public GameObject startUiGameObject;
+        // public GameObject startUiGameObject;
         public GameObject itemInteractableGameObject;
 
         public bool isInteracting;
@@ -113,7 +113,6 @@ namespace PG
                         }
                     }
                 }
-
             }
             else
             {
