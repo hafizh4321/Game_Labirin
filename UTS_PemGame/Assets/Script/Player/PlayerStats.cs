@@ -65,21 +65,12 @@ namespace PG
             SaveSystem.SavePlayer(this);
             energyBar.SetCurrentEnergy();
             clock.currentTime();
-
         }
 
         public void LoadPlayer()
         {
-            // selectWindow.SetActive(false);
-            // Cursor.lockState = CursorLockMode.Confined;
-            // Time.timeScale = 1f;
-            // SceneManager.LoadScene("SampleScene");
-
             PlayerData data = SaveSystem.LoadPlayer();
-
             currentHealth = data.currentHealth;
-
-
             Vector3 position;
             position.x = data.position[0];
             position.y = data.position[1];
@@ -88,8 +79,6 @@ namespace PG
             healthBar.SetCurrentHealth(currentHealth);
             energyBar.CurrentEnergy();
             clock.LoadCurrentTime();
-
-
         }
     }
 }

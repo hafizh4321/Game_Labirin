@@ -21,7 +21,6 @@ namespace PG
         {
             EnergyDrain();
             UpdateEnergy();
-
         }
 
         private void EnergyDrain()
@@ -59,17 +58,16 @@ namespace PG
 
         public void SetCurrentEnergy()
         {
-            // float ratio = energy / maxEnergy;
-            // slider.value = ratio;
             energyCurrent = energy;
             ratioCurrent = ratio;
         }
+
         public void CurrentEnergy()
         {
             energy = energyCurrent;
             ratio = ratioCurrent;
             slider.value = ratio;
-            energy = energyCurrent;
+
         }
     }
 }

@@ -8,8 +8,8 @@ namespace PG
     [System.Serializable]
     public class PlayerData
     {
-        public int currentHealth; public float[] position;
-
+        public float[] position;
+        public int currentHealth;
         public PlayerData(PlayerStats playerStats)
         {
             currentHealth = playerStats.currentHealth;

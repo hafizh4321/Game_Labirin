@@ -9,6 +9,7 @@ namespace PG
     {
         public int damage = 25;
         public CameraShake cameraShake;
+
         private void OnTriggerEnter(Collider other)
         {
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
@@ -16,7 +17,6 @@ namespace PG
             {
                 playerStats.TakeDamage(damage);
                 StartCoroutine(cameraShake.Shake(.15f, .4f));
-                // CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             }
         }
     }
